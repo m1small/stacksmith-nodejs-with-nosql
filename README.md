@@ -15,11 +15,13 @@ This is a simple ToDo application to show how to deploy a MEAN application using
    tar czf app.blue.tar.gz app
    ```
    
-You can also download [`app.blue.tar.gz` from the releases page](https://github.com/bitnami-labs/stacksmith-examples/releases/download/v1/app.blue.tar.gz).
+You can also download [`app.blue.tar.gz` from the releases page](https://github.com/bitnami-labs/stacksmith-nodejs-with-nosql/releases/download/v1/app.blue.tar.gz).
 
-5. Upload the [_build.sh_](scripts/build.sh), [_boot.sh_](scripts/boot.sh) and [_run.sh_](scripts/run.sh) scripts from the [_scripts/_](scripts/) folder.
+5. Select `Git repository` for the application scripts and paste the URL of this repo. Use `master` as the `Repository Reference`.
 6. Click the <kbd>Create</kbd> button.
 7. Wait for app to be built and deploy it in your favorite target platform.
+
+Stacksmith will compare the latest commit for a reference (e.g. new commits made to a branch) against the last commit used during packaging. If there are any new commits available, these will be available to view within the `Repository Details` pane in the application history. If you choose to repackage your application, these newer commits will be incorporated and used during the packaging.
 
 ### Update the application with Stacksmith
 
@@ -31,25 +33,25 @@ You can also download [`app.blue.tar.gz` from the releases page](https://github.
    tar czf app.orange.tar.gz app
    ```
    
-You can also download [`app.orange.tar.gz` from the releases page](https://github.com/bitnami-labs/stacksmith-examples/releases/download/v1/app.orange.tar.gz).
+You can also download [`app.orange.tar.gz` from the releases page](https://github.com/bitnami-labs/stacksmith-nodejs-with-nosql/releases/download/v1/app.orange.tar.gz).
    
 2. Go to your app [stacksmith.bitnami.com](https://stacksmith.bitnami.com)
 3. Click on <kbd>Edit configuration</kbd>, delete `app.blue.tar.gz` and upload `app.orange.tar.gz`
 4. Click <kbd>Update</kbd>.
 5. Wait for the new version to be built and re-deploy it in your favorite target platform.
 
+Stacksmith will use the latest Application Scripts from the GitHub repository.
+
 ## Use the Stacksmith CLI for automating the process
 
 1. Go to [stacksmith.bitnami.com](https://stacksmith.bitnami.com), create a new application and select the `Node.js with NoSQL DB (MongoDB)` stack template.
 2. Install [Stacksmith CLI](https://github.com/bitnami/stacksmith-cli) and authenticate with Stacksmith.
-3. Compress the _app/_ folder from this repo:
+3. Create a tarball with your application code. You can use the sample demo from releases:
 
    ```bash
-   git clone https://github.com/bitnami-labs/stacksmith-examples
-   cd stacksmith-examples/nodejs-with-nosql/todo
-   tar czf app.blue.tar.gz app
+   wget https://github.com/bitnami-labs/stacksmith-nodejs-with-nosql/releases/download/v1/app.blue.tar.gz
    ```
-4. Edit the `Stackerfile.yml` and update the `appId` with the URL of your project.
+4. Edit the `Stackerfile.yml`,  update the `appId` with the URL of your project and the name of `userUploads`.
 5. Run the build for a specific target like `aws` or `docker`. E.g.
 
    ```bash
@@ -59,12 +61,10 @@ You can also download [`app.orange.tar.gz` from the releases page](https://githu
 
 ### Update the application via CLI
 
-1. Change the app and build a new tarball. You can use the previous example:
+1. Change the app and build a new tarball. You can use the second example from releases:
 
    ```bash
-   cd stacksmith-examples/nodejs-with-nosql/todo
-   git apply ./change_color.patch
-   tar czf app.orange.tar.gz app
+   wget https://github.com/bitnami-labs/stacksmith-nodejs-with-nosql/releases/download/v1/app.orange.tar.gz
    ```
 
 2. Update the version and the tarball name in the `Stackerfile.yml`.
@@ -78,7 +78,7 @@ You can also download [`app.orange.tar.gz` from the releases page](https://githu
 
 ## Scripts
 
-In the scripts folder, you can find the required scripts to build and run this application:
+In the `stacksmith/user-scripts` folder, you can find the required scripts to build and run this application:
 
 ### build.sh
 
