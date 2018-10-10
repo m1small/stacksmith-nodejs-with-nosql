@@ -3,7 +3,7 @@ appId: https://stacksmith.bitnami.com/p/PROJECT_NAME/apps/ID
 appVersion: "1.0.0"
 files:
   userUploads:
-      - app.foo.tar.gz
+    - app.foo.tar.gz
   userScripts:
     build: stacksmith/user-scripts/build.sh
     boot: stacksmith/user-scripts/boot.sh
