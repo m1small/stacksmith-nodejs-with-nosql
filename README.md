@@ -10,8 +10,8 @@ This is a simple ToDo application to show how to deploy a MEAN application using
 4. Compress the _app/_ folder from this repo and upload it as application files:
 
    ```bash
-   git clone https://github.com/bitnami-labs/stacksmith-examples
-   cd stacksmith-examples/nodejs-with-nosql/todo
+   git clone https://github.com/bitnami-labs/stacksmith-nodejs-with-nosql
+   cd stacksmith-nodejs-with-nosql/todo
    tar czf app.blue.tar.gz app
    ```
    
@@ -28,7 +28,7 @@ Stacksmith will compare the latest commit for a reference (e.g. new commits made
 1. Change something on the app. As an example you can apply the patch `change_color.patch` that changes the color of the task counter:
 
    ```bash
-   cd stacksmith-examples/nodejs-with-nosql/todo
+   cd stacksmith-nodejs-with-nosql/todo
    git apply ./change_color.patch
    tar czf app.orange.tar.gz app
    ```
