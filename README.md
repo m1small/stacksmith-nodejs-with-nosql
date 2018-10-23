@@ -1,3 +1,5 @@
+[![View in Stacksmith](https://img.shields.io/badge/view_in-stacksmith-00437B.svg)](https://stacksmith.bitnami.com/p/bitnami-public/apps/003c0310-b4e3-0136-bce8-428c7a3df1a4)
+
 # MEAN ToDo Application
 
 This is a simple ToDo application to show how to deploy a MEAN application using [Bitnami Stacksmith](https://stacksmith.bitnami.com)
