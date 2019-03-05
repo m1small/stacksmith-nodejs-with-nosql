@@ -19,3 +19,6 @@ chown -R ${system_user}:${system_user} ${installdir}
 
 # Installing application dependencies
 exec su "${system_user}" -c "cd ${installdir} && npm install"
+
+# Install node-localstorage npm module
+npm install node-localstorage
